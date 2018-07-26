@@ -1,6 +1,8 @@
 package com.synerzip.wallet.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -11,13 +13,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
     @Column(name = "email", nullable = false)
+    @Email(message = "Invalid email, shuld be like 123@abc.xyz")
     private String email;
 
     @Column(name = "password", nullable = false)
+    @Size(min = 8, max = 12, message = "password length should be 8 to 12")
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -26,8 +30,7 @@ public class User {
     public User() {
     }
 
-    public User(int id, String name, String email, String password) {
-        this.id = id;
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
