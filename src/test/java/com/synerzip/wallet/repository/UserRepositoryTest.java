@@ -27,6 +27,6 @@ public class UserRepositoryTest {
         testEntityManager.persist(user);
 
         User found = userRepository.findById(user.getId());
-        Assertions.assertThat(found.getEmail()).isEqualTo(user.getEmail());
+        Assertions.assertThat(found.getName()).isEqualTo("vivek");
     }
 }
