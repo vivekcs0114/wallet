@@ -1,12 +1,9 @@
-DROP SCHEMA IF EXISTS `wallet`;
 CREATE SCHEMA IF NOT EXISTS `wallet` DEFAULT CHARACTER SET utf8;
 USE `wallet` ;
 
 -- -----------------------------------------------------
 -- Table `user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `user` ;
-
 CREATE  TABLE IF NOT EXISTS `user` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT ,
   `email` VARCHAR(255) NOT NULL ,
@@ -20,8 +17,6 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `category`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `category` ;
-
 CREATE  TABLE IF NOT EXISTS `category` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(255) NOT NULL ,
@@ -33,8 +28,6 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `expense`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `expense` ;
-
 CREATE  TABLE IF NOT EXISTS `expense` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT ,
   `user_id` BIGINT(20) NOT NULL ,

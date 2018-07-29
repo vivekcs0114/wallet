@@ -23,4 +23,9 @@ public class UserController {
     public User find(@PathVariable("id") int id) {
         return userService.find(id);
     }
+
+    @PostMapping("/sign-up")
+    public void signUp(@RequestBody User user) {
+        userService.signUp(user);
+    }
 }

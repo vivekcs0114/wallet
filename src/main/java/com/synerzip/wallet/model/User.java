@@ -21,7 +21,7 @@ public class User {
     private String email;
 
     @Column(name = "password", nullable = false)
-    @Size(min = 8, max = 12, message = "password length should be 8 to 12")
+    @Size(min = 8, message = "password length should be 8 to 12")
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
