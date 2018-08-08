@@ -34,6 +34,15 @@ public class Expense {
     public Expense() {
     }
 
+    public Expense(String title, User user, Category category, String description, int amount, Date date) {
+        this.title = title;
+        this.user = user;
+        this.category = category;
+        this.description = description;
+        this.amount = amount;
+        this.date = date;
+    }
+
     public Expense(int id, String title, User user, Category category, String description, int amount, Date date) {
         this.id = id;
         this.title = title;

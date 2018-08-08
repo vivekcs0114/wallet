@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, Integer> {
+
+    public Expense findByTitle(String title);
 }
